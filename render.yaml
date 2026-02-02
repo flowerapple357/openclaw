@@ -21,5 +21,11 @@ services:
         value: "openrouter"
       - key: DEFAULT_MODEL_ID
         value: "openrouter/deepseek/deepseek-r1:free"
-    # Note: Free plan does not support persistent disks. 
-    # Config will be lost on redeploy.
+      # 跳過配置檢查並允許未配置啟動
+      - key: OPENCLAW_ALLOW_UNCONFIGURED
+        value: "true"
+      - key: OPENCLAW_GATEWAY_MODE
+        value: "local"
+      - key: OPENCLAW_GATEWAY_BIND
+        value: "lan"
+    # 免費方案不支援持久化磁碟

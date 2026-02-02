@@ -34,6 +34,9 @@ ENV NODE_ENV=production
 # Security hardening: Run as non-root user
 # The node:22-bookworm image includes a 'node' user (uid 1000)
 # This reduces the attack surface by preventing container escape via root privileges
+USER root
+COPY render-start.sh /app/render-start.sh
+RUN chmod +x /app/render-start.sh
 USER node
 
-CMD ["node", "dist/index.js"]
+CMD ["/app/render-start.sh"]
