@@ -7,6 +7,8 @@ services:
     envVars:
       - key: PORT
         value: "8080"
+      - key: HEALTH_PORT
+        value: "8081"
       - key: SETUP_PASSWORD
         value: "openclaw123"
       - key: OPENCLAW_STATE_DIR
@@ -21,11 +23,9 @@ services:
         value: "openrouter"
       - key: DEFAULT_MODEL_ID
         value: "openrouter/deepseek/deepseek-r1:free"
-      # 跳過配置檢查並允許未配置啟動
       - key: OPENCLAW_ALLOW_UNCONFIGURED
         value: "true"
       - key: OPENCLAW_GATEWAY_MODE
         value: "local"
       - key: OPENCLAW_GATEWAY_BIND
         value: "lan"
-    # 免費方案不支援持久化磁碟
