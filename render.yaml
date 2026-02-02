@@ -6,9 +6,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: PORT
-        value: "8080"
-      - key: HEALTH_PORT
-        value: "8081"
+        value: "10000"
       - key: SETUP_PASSWORD
         value: "openclaw123"
       - key: OPENCLAW_STATE_DIR
